@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    ### Set theme to Dark
+    - resource: Microsoft.Windows.Developer/EnableDarkMode
+      directives:
+        description: Set theme to Dark
+        allowPrerelease: true
+      settings:
+        RestartExplorer: true
+    ### Git Configure Name
+    - resource: GitDsc/GitConfigUserName
+      directives:
+        description: Configure Git
+        allowPrerelease: true
+      settings:
+        UserName: "Anthony Cangialosi [MS]"
+        ConfigLocation: "Global"
+    ### Git Configure Email
+    - resource: GitDsc/GitConfigUserEmail
+      directives:
+        description: Configure Git
+        allowPrerelease: true
+      settings:
+        UserEmail: "5457010+acangialosi@users.noreply.github.com"
+        ConfigLocation: "Global"
